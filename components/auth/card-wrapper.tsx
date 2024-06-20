@@ -8,6 +8,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Header } from "./header";
 
 interface CardWrapperProps {
 	children: React.ReactNode;
@@ -24,5 +25,12 @@ export const CardWrapper = ({
 	backButtonHref,
 	showSocial,
 }: CardWrapperProps) => {
-	return <Card className='w-[400px] shadow-md'>{children}</Card>;
+	return (
+		<Card className='w-[400px] shadow-md'>
+			<CardHeader>
+				<Header label={headerLabel} />
+			</CardHeader>
+			{children}
+		</Card>
+	);
 };
